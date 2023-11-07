@@ -1,0 +1,104 @@
+/*########################################
+/#####RESET ELEMENTS
+########################################*/
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  transition: none; -webkit-transition: none;
+}
+ul {
+  list-style: none; list-style-type: none;
+}
+ul li {
+  float: left;
+}
+img, fieldset {
+  border: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; margin-bottom: 10px;
+}
+
+/*########################################
+/#####FONT FILES
+########################################*/
+@font-face {
+    font-family: 'Gotham';
+    src: url('font-files/gotham-bold-webfont.woff2') format('woff2'),
+         url('font-files/gotham-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('font-files/gotham-light-webfont.woff2') format('woff2'),
+         url('font-files/gotham-light-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cyberthone';
+    src: url('font-files/cyberthrone-webfont.woff2') format('woff2'),
+         url('font-files/cyberthrone-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*########################################
+/#####MAIN ELEMENTS
+########################################*/
+body {
+  background-color: #000; color:  #FFF;
+  font-family:  'Gotham';
+}
+
+#bg-video {
+    object-fit: cover;
+    position: fixed; right: 0; bottom: 0; 
+    min-width: 100%; min-height: 100%;
+    width: 100vw; height: 100vh;
+}
+a {
+    transition: all 0.5s ease; -webkit-transition: all 0.5s ease;
+}
+h1 {
+  font-family: 'Cyberthone'; font-size: 75px; line-height: 0.7em;
+  margin-bottom: 0px;
+}
+h2 {
+  font-family: 'Gotham'; font-size: 16px; font-weight: 700;
+  text-transform: uppercase;
+}
+h3 {
+    float: right; font-weight: 400; font-style: italic;
+    font-size: 13px; font-weight: 800; color: #ffd500;
+    width: 100%; text-align: right;
+}
+input[type=text], input[type=url] {
+    font-size: 16px; width: 100%; border: none; padding: 8px 10px; 
+    font-family: 'Gotham'; margin-bottom: 10px;
+}
+fieldset p {
+    float: left; width: 100%; margin-bottom: 5px;
+}
+input[type=submit] {
+    background: #7c1dce; border: none; width: 100%; color: #FFF; 
+    padding: 10px; padding: 12px 14px; font-family: 'Gotham'; 
+    font-size: 15px; font-weight: 800; text-align: left;
+    border-radius: 9px;
+}
+label {
+    font-weight: 800; font-size: 11px; width: 100%; 
+    float: left; margin-bottom: 3px;
+}
+label a {
+    color: #FFF;
+}
+label.error {
+    font-weight: 400; font-style: italic; color: #ab0909;
+}
+select {
+    width: 100%; height: 35px; padding: 5px; font-family: 'Gotham'; margin-bottom: 10px;
+}

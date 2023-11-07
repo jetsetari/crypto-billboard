@@ -1,0 +1,6 @@
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  background-color: black;
+  width: 960px;
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DECENTRABOARD ■ NFT powered billboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" type="text/css" href="/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/plugins.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- WEB3 -->
+    <script type="text/javascript" src="node_modules/web3/dist/web3.min.js"></script>
+    <!-- JS LIBS -->
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/plugins.js"></script>
+  </head>
+
+  <body>
+
+    <!-- <video autoplay muted loop id="bg-video">
+      <source src="./files/_video.webm" type="video/webm">
+      <source src="./files/_video.mp4" type="video/mp4">
+    </video> -->
+
+    <div id="overlay">
+      <div id="bg-overlay"></div>
+      <div id="box">
+        <div id="btn-close"></div>
+        <h2>Manage My Slots on Decentraboard</h2>
+        <h3>Current slot: <span id="current-slot"></span></h3>
+        <p><label>Slot</label>
+          <select id="select-slot"></select>
+        </p>
+        <div id="processing">
+          <div id="inner">
+            <div class="lds-ring">
+              <div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <span>Please confirm the transaction on the blockchain with your Wallet. This can take a while...</span>
+        </div>
+        <div class="box-form" id="form-slot">
+            <form id="form-sign" action="#"  method="get">
+              <fieldset>
+                <input type="hidden" name="val-slot" id="val-slot" />
+                <input type="hidden" name="val-forsale" id="val-forsale" />
+                <p><label>Slot image URL</label><input required type="url" name="val-img" id="val-img" /></p>
+                <p><label>Redirect URL</label><input required type="url" name="val-url" id="val-url" /></p>
+                <p><label>Owner name</label><input  minlength="2" required type="text" name="val-owner" id="val-owner" /></p>
+                <p><label><input required type="checkbox" name="val-terms" id="val-terms" />&nbsp; I accept the <a href="decentraboard-terms_and_conditions.pdf" target="_blank" title="Legal Terms & Conditions">Terms and conditions</a></label></p>
+                <p><input type="submit" id="btn-sign" value="Sign Transaction" /></p>
+              </fieldset>
+            </form>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="buy-overlay">
+      <div id="bg-overlay"></div>
+      <div id="box">
+        <div id="btn-close"></div>
+        <h2>Buy slot <span id="buy-slot-id"></span> for <span id="buy-slot-price"></span> ETH</h2>
+        <div id="processing">
+          <div id="inner">
+            <div class="lds-ring">
+              <div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <span>Please confirm the transaction on the blockchain with your Wallet. This can take a while...</span>
+        </div>
+        <div class="box-form" id="form-slot">
+            <form id="form-buy" action="#"  method="get">
+              <fieldset>
+                <input type="hidden" name="buy-slot" id="buy-slot" />
+                <input type="hidden" name="buy-forsale" id="buy-forsale" />
+                <p><label>Slot image URL</label><input required type="url" name="val-img" id="val-img" /></p>
+                <p><label>Redirect URL</label><input required type="url" name="val-url" id="val-url" /></p>
+                <p><label>Owner name</label><input  minlength="2" required type="text" name="val-owner" id="val-owner" /></p>
+                <p><label><input required type="checkbox" name="val-terms" id="val-terms" />&nbsp; I accept the <a href="decentraboard-terms_and_conditions.pdf" target="_blank" title="Legal Terms & Conditions">Terms and conditions</a></label></p>
+                <p><input type="submit" id="btn-buy" value="Buy slot" /></p>
+              </fieldset>
+            </form>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="about">
+      <div id="btn-close"></div>
+      <div id="bg-overlay"></div>
+      <div id="about-inner">
+        <div id="about-left">
+          <h2>About DECENTRABOARD</h2>
+          <div id="specs-box">
+            <span class="description">
+              <strong>Key Features of the NFT Billboard</strong>
+              <ul>
+                <li>1040 predefined slots that give unique editing rights to the owner</li>
+                <li>Each slot is 24px x 24px</li>
+                <li>Unique one-of "slot art" inside each NFT</li>
+                <li>Bundles for sale on auction: 4X, 9X, 16X</li>
+                <li>Uses ERC-721 functionality to modify your billboard slot</li>
+              </ul>
+            </span>
+            <span class="description">
+              <strong>Coming Soon for NFT Holders</strong>
+              <ul>
+                <li>Receive a high resolution POV picture of the billboard you're displayed on</li>
+                <li>Full render of the billboard will be displayed on various famous places around the world</li>
+              </ul>
+            </span>
+          </div>
+          <img src="./images/logo.svg" alt="Powered by ENVOY" width="130" />
+        </div>
+        <div id="about-right">
+          <h3>Introduction</h3>
+          <span class="description">
+            <p>DECENTRABOARD or the 'ENVOY Billboard' is the first NFT curated billboard that has the ambition to be on display year round in the most iconic and unique locations around the globe. </p>
+
+            <p>Furthermore, DECENTRABOARD is the centerpiece of the extraordinary 'Cryptopolis' artwork. By claiming your spot on the billboard you'll be able to showcase your brand, company or gimmick in both the digital and real world.</p>
+
+            <p>That's not all, by showcasing DECENTRABOARD on the most iconic locations in the world it obviously will become one of the most well known NFT fueled billboards in the world. Each slot is minted as an NFT and comes with an unique rare 1/1040 art piece of your slot, that grants you the rights on publishing images on the billboard.</p>
+          </span>
+          <h3>About the 'Cryptopolis' artwork</h3>
+          <span class="description">
+            <p>'Cryptopolis' is the city of the future, the capital of the ENVOY community. It's the year 2040 where governments and banks do no longer exist. The 9 billion inhabitants of planet earth live in 8 different states. Envoy is one of these 8 states, the most advanced state of them all. Bitcoin surpassed the eight-digit range and ENVOY is the main currency of Cryptopolis. Memories can be erased and restored, we have a new generation of hi-tech supercarriers & quantum computers are becoming the new standard as Moore's law comes to a close. A decentralized world, where the Envoyans took back the power.</p>
+
+            <p>It's an extraordinary art piece created by BOXCAT, not only will you own a beautiful artwork, you'll become part of the ENVOY community where sooner or later you'll be entitled to claim your 'Envoyan' in an upcoming ENVOY 'exclusive' drop.</p>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="wrapper">
+      <header>
+        <div class="side left">
+          <a id="btn-learnmore" href="#">Learn more</a>
+        </div>
+        <div id="logo">
+          <h1>Decentraboard</h1>
+          <h2>NFT powered billboard</h2>
+        </div>
+        <div class="side right">
+          <a id="btn-connect" href="#">
+            Connect wallet
+          </a>
+          <div id="connect-submenu">
+            <span id="btn-slots">My Slots</span>
+            <span id="btn-logout">Disconnect</span>
+          </div>
+        </div>
+      </header>
+      <div class="board">
+        <div class="overlay-lights"></div>
+        <div class="overlay-frame"></div>
+        <content></content>
+      </div>
+      <footer>
+          <a href="https://www.envoy.art/" target="_blank" title="Powered by ENVOY">
+            <img src="./images/logo.svg" alt="Powered by ENVOY" width="130" />
+          </a>
+          <div class="legal">
+            <a href="#reset" target="_blank" title="Clear cache and refetch data" class="reset">
+              Reset Board
+            </a>
+            &nbsp; &bull; &nbsp;  
+            &copy; 2021 
+            <a href="https://www.envoy.art/" target="_blank" title="ENVOY Network">
+              ENVOY Network 
+            </a>
+            &nbsp; &bull; &nbsp;  
+            <a href="decentraboard-terms_and_conditions.pdf" target="_blank" title="Legal Terms & Conditions">
+              Terms & Conditions
+            </a>
+          </div>
+          
+          <div id="d_connectWallet" style="display: none;">
+            <p>Connected wallet: <strong id="i_wallet_address">...</strong></p>
+            <p>On network: <strong id="i_network_name">...</strong></p>
+          </div>
+      </footer>
+    </div>
+
+    <!-- START APP -->
+    <script type="module">
+      import { loadPage } from './js/main.js';
+      // On page load, setup wallet
+      window.addEventListener('load', async () => {
+        loadPage();
+      });
+    </script>
+
+  </body>
+</html>

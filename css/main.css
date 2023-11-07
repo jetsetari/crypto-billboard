@@ -1,0 +1,357 @@
+body {
+	background: #000 url('../images/bg.jpg') center center no-repeat;
+	overflow-x: hidden;
+	background-size: cover;
+	height: 100vh;
+}
+
+#soon {
+	width: 60%;
+	max-width: 700px;
+	position: relative;
+	z-index: 1000;
+}
+
+#wrapper {
+	position: relative;
+	text-align: center;
+	margin: 90px auto;
+	max-width:  960px; 
+	min-height: 500px;
+}
+
+#wrapper header {
+	position: relative; z-index: 100; float:  left; width: 100%; top: -40px;
+}
+#wrapper header .side {
+	width:  calc(50% - 180px); height: 40px; float: left; position: relative;
+}
+#wrapper header .side #connect-submenu {
+	background: #FFF; max-width: 140px; position: absolute; top: 54px; 
+	right: 12px; border-radius: 14px; display: none;
+	padding: 12px;
+}
+.connected #wrapper header .side #connect-submenu {
+	display: block;
+}
+.connected.panel-hidden #wrapper header .side #connect-submenu {
+	display: none;
+}
+#wrapper header .side #connect-submenu:before, #wrapper header .side #connect-submenu:after {
+  position: absolute; content: ""; display: block;
+}
+#wrapper header .side #connect-submenu:before {
+  right: 20px; z-index: 2; top: -10px; border-bottom: 10px solid #ffffff; 
+  border-left: 10px solid transparent; border-right: 10px solid transparent;
+}
+#wrapper header .side #connect-submenu:after {
+  right: 20px; z-index: 1; top: -11px; border-bottom: 11px solid #B4B4B5; 
+  border-left: 11px solid transparent; border-right: 11px solid transparent;
+}
+
+
+#wrapper header .side #connect-submenu #btn-slots {
+    width: 100%; color: #000; padding: 8px 5px 5px 30px; float: left; 
+    font-size: 12px; font-weight: 800; text-align: left; background-size: 15px 15px; 
+    background-position: 10px 7px; background-repeat: no-repeat; 
+    background-image: url(../images/slots.svg); cursor: pointer;
+}
+#wrapper header .side #connect-submenu #btn-logout {
+    width: 100%; color: #000; padding: 8px 5px 10px 30px; background-size: 15px 15px; 
+    float: left; font-size: 12px; font-weight: 800; text-align: left; 
+    background-position: 10px 7px; background-repeat: no-repeat; 
+    background-image: url(../images/logout.svg); cursor: pointer;
+}
+#wrapper header .side a {
+	background-color: #000; color: #FFF; font-size: 12px; float: left;
+	text-decoration: none; padding: 14px 25px; border-radius: 60px;
+	padding-left: 40px; background-color: #000; background-size: 15px 15px;
+	background-position: left 15px center; background-repeat: no-repeat;
+}
+#wrapper header .side a#btn-learnmore {
+	background-image: url('../images/info.svg');
+}
+#wrapper header .side a#btn-connect {
+	float: right;
+	background-image: url('../images/wallet.svg');
+	/*max-width: 170px; overflow: hidden; text-overflow: ellipsis;*/
+}
+#wrapper header .side a#btn-connect.connected {
+	background-color: #2b3c2b; background-image: url('../images/check.svg');
+}
+#wrapper header .side a:hover {
+	background-color: #7518b2;
+}
+#wrapper header #logo {
+	width: 360px; float: left; height: 100px;
+	text-align: center; color: #FFF;
+}
+
+#about {
+	position: fixed;  left: 0px; right: 0px; 
+	z-index: 5000; bottom: 0px; top: 0px;
+	display: none;
+}
+#about.active {
+	display: block;
+}
+#about #btn-close {
+	width: 20px; height: 20px; background: url('../images/x-white.svg') center center no-repeat;
+	position: absolute; right: 20px; top: 20px; cursor: pointer;
+	z-index: 900000;
+}
+#about #bg-overlay {
+	background: #11013add; position: fixed; 
+	left: 0px; right: 0px; bottom: 0px; top: 0px;
+}
+#about #about-inner {
+	max-width: 1200px; z-index: 5005; position: absolute; left: 50%; top: 30%;
+	-webkit-transform: translate(-50%, -30%); transform: translate(-50%, -30%);
+    padding: 30px; color: rgba(255,255,255,0.9); width: 100%;  line-height: 1.5em;
+}
+#about #about-inner #about-left {
+	width: 400px; float: left; text-align: center;
+}
+#about #about-inner #about-left h2 {
+	font-size: 26px; text-transform: none;
+	text-shadow:1px 1px 10px rgba(255,255,255,0.2), 1px 1px 5px #ccc;
+	margin-bottom: 40px;
+}
+#about #about-inner #about-left #specs-box {
+	padding: 30px; background: #ffffff24; float: left; 
+	width: 100%; border-radius: 26px; text-align: left;
+	margin-bottom: 20px; padding-bottom: 10px;
+}
+#about #about-inner #about-left #specs-box strong {
+	margin-bottom: 10px; float: left; width: 100%;
+}
+#about #about-inner #about-left #specs-box .description {
+	font-size: 14px;
+}
+#about #about-inner #about-left #specs-box .description ul {
+	list-style: circle; padding-left: 15px; margin-bottom: 20px;
+	float: left;
+}
+#about #about-inner #about-left #specs-box .description ul li {
+	padding-bottom: 5px;
+}
+#about #about-inner #about-right {
+	width: calc(100% - 400px); float: left; padding-left: 70px;
+	padding-top: 70px;
+}
+#about #about-inner #about-right h3 {
+	float: left; text-align: left; color: #FFF; 
+	font-size: 24px; font-style: normal;
+	margin-bottom: 18px;
+}
+#about #about-inner #about-right .description {
+	font-size: 14px; margin-bottom: 30px; float: left;
+	width: 100%;
+}
+#overlay {
+	position: fixed; 
+	left: 0px; right: 0px; bottom: 0px; top: 0px;
+	z-index: 5000; display: none;
+}
+#overlay.active {
+	display: block;
+}
+#overlay #btn-close {
+	width: 20px; height: 20px; background: url('../images/x-white.svg') center center no-repeat;
+	position: absolute; right: 20px; top: 20px; cursor: pointer;
+}
+#overlay #bg-overlay {
+	background: #11013a9c; position: fixed; 
+	left: 0px; right: 0px; bottom: 0px; top: 0px;
+}
+#overlay #box {
+	width: 400px; background: #ffffff24; z-index: 5005; 
+	position: absolute; left: 50%; top: 50%;
+	-webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);
+    padding: 30px; color: #FFF; border-radius: 9px;
+}
+#overlay #box h2 {
+	margin-bottom: 20px;
+}
+#overlay #box #processing {
+	padding: 100px; font-size: 13px; font-weight: 800; display: none;
+}
+#overlay #box #processing.active {
+	display: block;
+}
+#overlay #box #processing #inner {
+	width: 80px; margin: auto;
+}
+#overlay #box #processing span {
+	text-align: center; float: left; width: 100%;
+}
+
+
+#buy-overlay {
+	position: fixed; 
+	left: 0px; right: 0px; bottom: 0px; top: 0px;
+	z-index: 5000; display: none;
+}
+#buy-overlay.active {
+	display: block;
+}
+#buy-overlay #btn-close {
+	width: 20px; height: 20px; background: url('../images/x-white.svg') center center no-repeat;
+	position: absolute; right: 20px; top: 20px; cursor: pointer;
+}
+#buy-overlay #bg-overlay {
+	background: #11013a9c; position: fixed; 
+	left: 0px; right: 0px; bottom: 0px; top: 0px;
+}
+#buy-overlay #box {
+	width: 400px; background: #ffffff24; z-index: 5005; 
+	position: absolute; left: 50%; top: 50%;
+	-webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);
+    padding: 30px; color: #FFF; border-radius: 9px;
+}
+#buy-overlay #box h2 {
+	margin-bottom: 20px;
+}
+#buy-overlay #box #processing {
+	padding: 100px; font-size: 13px; font-weight: 800; display: none;
+}
+#buy-overlay #box #processing.active {
+	display: block;
+}
+#buy-overlay #box #processing #inner {
+	width: 80px; margin: auto;
+}
+#buy-overlay #box #processing span {
+	text-align: center; float: left; width: 100%;
+}
+
+
+
+
+#wrapper .board {
+	cursor: pointer;
+}
+
+#wrapper .board .overlay-lights {
+	width: 1600px;
+	height: 726px;
+	background: url('../images/overlay-lights.png') top left no-repeat;
+	pointer-events: none;
+	position: absolute;
+	left: -310px;
+	top: 60px;
+	animation: flicker 3s linear infinite;
+}
+
+#wrapper .board .overlay-frame {
+	width: 1028px;
+	height: 761px;
+	background: url('../images/overlay-frame.png') top left no-repeat;
+	pointer-events: none;
+	position: absolute;
+	left: -24px;
+	top: -36px;
+}
+
+#wrapper content {
+	width:  976px; height: 590px; background: #000; float: left;
+	border: 3px solid #2f0743; padding: 5px;
+    background-color: black; border-radius: 8px;
+}
+#wrapper content .btn-slot {
+	float: left;
+}
+
+#wrapper content .btn-slot:hover {
+	background-color: #2d2038;
+}
+#wrapper content.connected .btn-slot {
+	border-right: 1px solid #36294a; border-bottom: 1px solid #36294a;
+}
+#wrapper content.connected .btn-slot:nth-child(n+1000) {
+	/*border-bottom: none;*/
+}
+#wrapper content .btn-slot .slot-item,
+#wrapper content .btn-slot .slot-img {
+	width: 100% !important; height: 100% !important;
+	display: block;
+}
+
+#wrapper content .btn-slot .empty {
+	width: 100% !important; height: 100% !important; float: left;
+	display: block;
+}
+
+#wrapper.blurred {
+  filter: blur(5px);
+}
+
+.connected #wrapper content .btn-slot .disabled {
+	background-color: rgba(200,0,0,0.3);
+	cursor: default;
+}
+
+.legal {
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+	padding: 30px;
+}
+
+.legal a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.legal a:hover {
+	text-decoration: underline;
+}
+
+
+#wrapper footer {
+	width: 960px; height: 80px; float: left;
+	text-align: center; margin-top:  80px;
+}
+
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  background-color: black;
+  width: 960px;
+}
+
+
+@keyframes flicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+		opacity: .99;
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.83;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+  #wrapper {
+  	zoom: 1.4;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #wrapper {
+  	zoom: 0.8;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #wrapper {
+  	zoom: 0.6;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #wrapper {
+  	zoom: 0.4;
+  }
+}
+
